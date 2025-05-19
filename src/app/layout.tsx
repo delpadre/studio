@@ -34,7 +34,7 @@ export default function RootLayout({
       >
         <CartProvider>
           <Header />
-          <main className="flex-grow container mx-auto px-4 py-8">
+          <main className="flex-grow w-full max-w-screen-sm mx-auto px-4 py-8">
             {children}
           </main>
           <Toaster />
