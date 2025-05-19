@@ -10,7 +10,7 @@ import { useCart } from '@/contexts/CartContext';
 import { Badge } from "@/components/ui/badge";
 
 export function Header() {
-  const { getItemCount } = useCart();
+  const { getItemCount, isCartLoaded } = useCart();
   const itemCount = getItemCount();
 
   return (
@@ -62,7 +62,7 @@ export function Header() {
                   >
                     <item.icon className="h-5 w-5" />
                     <span>{item.label}</span>
-                     {item.href === '/cart' && itemCount > 0 && (
+                     {item.href === '/cart' && isCartLoaded && itemCount > 0 && (
                         <Badge variant="destructive" className="ml-auto">{itemCount}</Badge>
                      )}
                   </Link>
@@ -84,7 +84,7 @@ export function Header() {
            <Link href="/cart" passHref>
             <Button variant="ghost" size="icon" aria-label="Cart" className="relative">
               <ShoppingCart className="h-5 w-5" />
-              {itemCount > 0 && (
+              {isCartLoaded && itemCount > 0 && (
                 <Badge variant="destructive" className="absolute -top-1 -right-1 px-1.5 py-0.5 text-xs">
                   {itemCount}
                 </Badge>

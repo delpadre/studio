@@ -16,24 +16,37 @@ interface CartContextType {
   clearCart: () => void;
   getCartTotal: () => number;
   getItemCount: () => number;
+  isCartLoaded: boolean;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
-    if (typeof window !== 'undefined') {
-      const localData = localStorage.getItem('autoConnectCart');
-      return localData ? JSON.parse(localData) : [];
-    }
-    return [];
-  });
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [isCartLoaded, setIsCartLoaded] = useState(false);
 
+  // Load cart from localStorage on client-side after mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      const localData = localStorage.getItem('autoConnectCart');
+      if (localData) {
+        try {
+          setCartItems(JSON.parse(localData));
+        } catch (error) {
+          console.error("Error parsing cart data from localStorage", error);
+          localStorage.removeItem('autoConnectCart'); // Clear corrupted data
+        }
+      }
+      setIsCartLoaded(true); // Set cart as loaded
+    }
+  }, []); // Empty dependency array: run once on mount
+
+  // Save cart to localStorage whenever it changes, only after initial load
+  useEffect(() => {
+    if (typeof window !== 'undefined' && isCartLoaded) {
       localStorage.setItem('autoConnectCart', JSON.stringify(cartItems));
     }
-  }, [cartItems]);
+  }, [cartItems, isCartLoaded]);
 
   const addToCart = (part: Part) => {
     setCartItems((prevItems) => {
@@ -86,6 +99,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         clearCart,
         getCartTotal,
         getItemCount,
+        isCartLoaded,
       }}
     >
       {children}
