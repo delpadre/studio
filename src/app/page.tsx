@@ -46,13 +46,13 @@ export default function HomePage() {
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Link href="/parts-search">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground whitespace-normal h-auto">
                     Comece a Buscar Peças
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
                 <Link href="/plate-lookup">
-                  <Button variant="outline" size="lg">
+                  <Button variant="outline" size="lg" className="whitespace-normal h-auto">
                     Consultar por Placa
                   </Button>
                 </Link>
@@ -92,7 +92,7 @@ export default function HomePage() {
                 </CardContent>
                 <div className="p-6 pt-0">
                   <Link href={feature.href} className="w-full">
-                    <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+                    <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground whitespace-normal h-auto">
                       {feature.cta} <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
@@ -115,7 +115,7 @@ export default function HomePage() {
           </div>
           <div className="mx-auto w-full max-w-sm space-y-2">
             <Link href="/login">
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground whitespace-normal h-auto">
                 Acessar Minha Conta
               </Button>
             </Link>

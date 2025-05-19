@@ -55,7 +55,7 @@ export function PartCard({ part }: PartCardProps) {
         </p>
       </CardContent>
       <CardFooter className="p-4 pt-0">
-        <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" onClick={handleAddToCart}>
+        <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground whitespace-normal h-auto" onClick={handleAddToCart}>
           <ShoppingCart className="mr-2 h-4 w-4" /> Adicionar ao Carrinho
         </Button>
       </CardFooter>
