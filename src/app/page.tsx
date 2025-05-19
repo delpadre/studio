@@ -48,7 +48,7 @@ export default function HomePage() {
                 <Link href="/parts-search">
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground whitespace-normal h-auto">
                     Comece a Buscar Peças
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
                 <Link href="/plate-lookup">
@@ -93,7 +93,7 @@ export default function HomePage() {
                 <div className="p-6 pt-0">
                   <Link href={feature.href} className="w-full">
                     <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground whitespace-normal h-auto">
-                      {feature.cta} <ArrowRight className="ml-2 h-4 w-4" />
+                      {feature.cta} <ArrowRight className="h-4 w-4" />
                     </Button>
                   </Link>
                 </div>
