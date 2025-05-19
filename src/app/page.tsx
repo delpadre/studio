@@ -64,7 +64,7 @@ export default function HomePage() {
               width={600}
               height={400}
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
-              data-ai-hint="mechanic workshop"
+              data-ai-hint="automobile service"
             />
           </div>
         </div>
