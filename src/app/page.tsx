@@ -47,7 +47,7 @@ export default function HomePage() {
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Link href="/parts-search">
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground whitespace-normal h-auto">
-                    Comece a Buscar Peças
+                    Buscar  Peças
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
@@ -59,9 +59,9 @@ export default function HomePage() {
               </div>
             </div>
             <Image
-              src="https://placehold.co/600x400.png"
+              src="/ancora2.png"
               alt="Hero AutoConnect"
-              width={600}
+              width={400}
               height={400}
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
               data-ai-hint="automobile service"
