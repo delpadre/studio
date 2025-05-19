@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body 
-        className={`${inter.variable} ${roboto_mono.variable} font-sans antialiased min-h-screen flex flex-col`}
+        className={`${inter.variable} ${roboto_mono.variable} font-sans antialiased min-h-screen flex flex-col overscroll-behavior-y-contain`}
       >
         <CartProvider>
           <Header />
