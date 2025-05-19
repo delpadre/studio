@@ -1,7 +1,8 @@
 // src/app/plate-lookup/page.tsx
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { lookupPlateAction, type PlateLookupState } from "./actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,7 +31,7 @@ function SubmitButton() {
 
 export default function PlateLookupPage() {
   const initialState: PlateLookupState = { success: false };
-  const [state, formAction] = useFormState(lookupPlateAction, initialState);
+  const [state, formAction] = useActionState(lookupPlateAction, initialState);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-15rem)] py-12">
