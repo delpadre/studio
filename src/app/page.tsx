@@ -52,7 +52,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <Link href="/plate-lookup">
-                  <Button variant="outline" size="lg" className="whitespace-normal h-auto">
+                  <Button variant="outline" size="lg">
                     Consultar por Placa
                   </Button>
                 </Link>
